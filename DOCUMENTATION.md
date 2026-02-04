@@ -7,18 +7,7 @@ Client (Postman / Frontend) → Controller → Service → Database (MySQL)
 
 ## 2. Struktur Folder
 
-src/
-├── app.js
-├── config/
-│ └── database.js
-├── routes/
-│ ├── lead.routes.js
-│ ├── deal.routes.js
-│ ├── activity.routes.js
-│ └── report.routes.js
-├── controllers/
-├── services/
-└── models/
+[Struktur Folder](./assets/struktur.png)
 
 ## 3. Database Schema
 
