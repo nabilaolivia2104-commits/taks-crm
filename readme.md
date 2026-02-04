@@ -1,57 +1,77 @@
-# Logic CRM
+# Logic CRM – Trivgoo Technical Test
 
-hallo ini adalah taks crm yang kita buat untuk menyelesaikan tes di trivgoo.
-saya buat ini memudahankan orang yang igin menggunakan codingan ini paham dengan apa yang saya buat
-harapan saya kedepannya kode ini di kembangkan agar menjadi lebih baik.
+Repository ini dibuat untuk menyelesaikan **Technical Test CRM Trivgoo**. Project ini berfokus pada pembuatan **backend CRM** menggunakan **Express.js** dan **MySQL**.
 
-# instalasi
+Tujuan utama project ini adalah:
 
-## 1.clone github
+- Mengimplementasikan logika dasar sistem CRM
+- Menyediakan REST API yang siap diuji menggunakan Postman
+- Memudahkan reviewer dan developer lain memahami alur sistem
 
-langkah awal yang perlu anda lakukkan, cloning github ini untuk bisa melihat struktur
-kode ini berupa file dan folder.
+---
 
+## Teknologi yang Digunakan
+
+- Node.js
+- Express.js
+- MySQL
+- dotenv
+- cors
+
+---
+
+## Instalasi
+
+### 1 Clone Repository
+
+Clone repository berikut untuk melihat struktur folder dan source code:
+
+```bash
+git clone https://github.com/nabilaolivia2104-commits/taks-crm.git
+cd taks-crm
 ```
-https://github.com/nabilaolivia2104-commits/taks-crm.git
-```
 
-## install depedensi
+---
 
-selanjutnya dalam package.json tersebut terdapat depensi yang di butuhkan kode ini. anda dapat melihatnya pada pada kolom di bawah daftar depedensi yang di butuhkan kode ini
+### 2 Install Dependencies
 
-```
-  "dependencies": {
-    "cors": "^2.8.6",
-    "dotenv": "^17.2.3",
-    "express": "^5.2.1",
-    "mysql2": "^3.16.3"
-  }
-```
+Semua dependency sudah terdaftar di dalam file `package.json`.
 
-untuk melakukkan instalasi anda cukup menjalankan :
+Jalankan perintah berikut untuk menginstall seluruh dependency:
 
-```
+```bash
 npm install
 ```
 
-maka semua depedensi yang di daftar tersebut akan otomatis terinstall dalam folder node_modules.
-dan tahap instalasi sudah selesai. selanjutnya jalanakan server kode dengan cara:
+Setelah proses selesai, folder `node_modules` akan otomatis dibuat.
 
-```
+---
+
+### 3 Menjalankan Server
+
+Untuk menjalankan server backend, gunakan perintah:
+
+```bash
 npm run dev
 ```
 
-artinya kita menjalankan printah key pada script package.json dengan dev yang di intialisasikan
-untuk menajalan printah "nodemon src/app.js". anda dapat melihat sendiri pada file package.json
-dan dapat merubahnya sesuai dengan yang anda mau.
+Perintah ini akan menjalankan:
 
-# Rest Api
+```bash
+nodemon src/app.js
+```
 
-selanjutnya setelah struktur kode berhasilkita aja melakukkan pengujian rest API.
+Server akan berjalan pada port **5000** (default).
 
-<hr>
-Base URL:
+---
+
+## REST API Documentation
+
+### Base URL
+
+```
 http://localhost:5000/api
+```
 
 ---
 
@@ -59,51 +79,85 @@ http://localhost:5000/api
 
 ### Create Lead
 
-POST /leads
+**POST** `/leads`
 
-Body (JSON):
+Request Body (JSON):
+
+```json
 {
-"lead_code": "TRV-L0001",
-"contact_name": "Budi Santoso",
-"phone": "08123456789",
-"email": "budi@mail.com",
-"source": "IG Ads",
-"assigned_to": 3,
-"tags": "Family",
-"package_preference": "3.5 jt / Private"
+  "lead_code": "TRV-L0001",
+  "contact_name": "Budi Santoso",
+  "phone": "08123456789",
+  "email": "budi@mail.com",
+  "source": "IG Ads",
+  "assigned_to": 3,
+  "tags": "Family",
+  "package_preference": "3.5 jt / Private"
 }
+```
 
 ---
 
 ### Get All Leads
 
-GET /leads
+**GET** `/leads`
 
-## Update Deal Stage
+---
 
-PUT /deals/stage
+## 2. Deal / Opportunity
 
-Body (JSON):
+### Update Deal Stage
+
+**PUT** `/deals/stage`
+
+Request Body (JSON):
+
+```json
 {
-"deal_id": 1,
-"stage_name": "Qualified",
-"lost_reason": null
+  "deal_id": 1,
+  "stage_name": "Qualified",
+  "lost_reason": null
 }
+```
 
-## Create Activity
+---
 
-POST /activities
+## Activity / Tasks
 
-Body (JSON):
+### Create Activity
+
+**POST** `/activities`
+
+Request Body (JSON):
+
+```json
 {
-"lead_id": 1,
-"deal_id": 1,
-"activity_type": "Call",
-"notes": "Follow up pertama",
-"activity_date": "2026-01-10 10:00:00",
-"created_by": 3
+  "lead_id": 1,
+  "deal_id": 1,
+  "activity_type": "Call",
+  "notes": "Follow up pertama",
+  "activity_date": "2026-01-10 10:00:00",
+  "created_by": 3
 }
+```
 
-## Dashboard KPI
+---
 
-GET /reports/dashboard
+## Reporting & KPI Dashboard
+
+### Dashboard KPI
+
+**GET** `/reports/dashboard`
+
+API ini digunakan untuk menampilkan ringkasan KPI CRM, seperti:
+
+- Total Leads
+- Deals Won
+- Conversion Rate
+- Revenue Forecast
+- Actual Revenue
+- Average Deal Value
+
+## Penutup
+
+Project ini dibuat sebagai bagian dari proses seleksi dan dapat dikembangkan lebih lanjut sesuai kebutuhan bisnis.
