@@ -161,3 +161,8 @@ API ini digunakan untuk menampilkan ringkasan KPI CRM, seperti:
 ## Penutup
 
 Project ini dibuat sebagai bagian dari proses seleksi dan dapat dikembangkan lebih lanjut sesuai kebutuhan bisnis.
+
+## 📘 Dokumentasi Teknis
+
+Dokumentasi teknis backend, database (ERD), dan alur sistem dapat diakses di sini:
+👉 [Lihat DOCUMENTATION.md](./DOCUMENTATION.md)
