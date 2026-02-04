@@ -2,7 +2,6 @@ const db = require("../config/db");
 
 exports.createLead = async (req, res) => {
   const {
-    lead_code,
     contact_name,
     phone,
     email,
@@ -12,12 +11,24 @@ exports.createLead = async (req, res) => {
     package_preference,
   } = req.body;
 
+  const [lastLead] = await db.query(
+    "SELECT lead_code FROM leads ORDER BY id DESC LIMIT 1",
+  );
+
+  let newLeadCode = "LD001";
+  if (lastLead.length > 0) {
+    const lastCode = lastLead[0].lead_code;
+    const num = parseInt(lastCode.replace(/\D/g, ""));
+    const nextNum = num + 1;
+    newLeadCode = "LD" + nextNum.toString().padStart(3, "0");
+  }
+
   const [result] = await db.query(
     `INSERT INTO leads
      (lead_code, contact_name, phone, email, source, entry_date, assigned_to, tags, package_preference)
      VALUES (?, ?, ?, ?, ?, CURDATE(), ?, ?, ?)`,
     [
-      lead_code,
+      newLeadCode,
       contact_name,
       phone,
       email,
@@ -37,7 +48,7 @@ exports.createLead = async (req, res) => {
     stage.id,
   ]);
 
-  res.json({ message: "Lead created" });
+  res.json({ message: "Lead created", lead_code: newLeadCode });
 };
 
 exports.getLeads = async (req, res) => {

@@ -89,7 +89,6 @@ Request Body (JSON):
 
 ```json
 {
-  "lead_code": "TRV-L0001",
   "contact_name": "Budi Santoso",
   "phone": "08123456789",
   "email": "budi@mail.com",
