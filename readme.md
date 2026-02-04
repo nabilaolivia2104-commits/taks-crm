@@ -22,7 +22,11 @@ Tujuan utama project ini adalah:
 
 ## Instalasi
 
-### 1 Clone Repository
+### 1 Import Database Mysql
+
+import database mysql di local database anda dengan file db_crm.sql
+
+### 2 Clone Repository
 
 Clone repository berikut untuk melihat struktur folder dan source code:
 
@@ -33,7 +37,7 @@ cd taks-crm
 
 ---
 
-### 2 Install Dependencies
+### 3 Install Dependencies
 
 Semua dependency sudah terdaftar di dalam file `package.json`.
 
@@ -47,7 +51,7 @@ Setelah proses selesai, folder `node_modules` akan otomatis dibuat.
 
 ---
 
-### 3 Menjalankan Server
+### 4 Menjalankan Server
 
 Untuk menjalankan server backend, gunakan perintah:
 
@@ -65,7 +69,7 @@ Server akan berjalan pada port **5000** (default).
 
 ---
 
-## REST API Documentation
+## REST API
 
 ### Base URL
 
@@ -160,9 +164,9 @@ API ini digunakan untuk menampilkan ringkasan KPI CRM, seperti:
 
 ## Penutup
 
-Project ini dibuat sebagai bagian dari proses seleksi dan dapat dikembangkan lebih lanjut sesuai kebutuhan bisnis.
+Project ini dibuat sebagai bagian dari proses tes dan dapat dikembangkan lebih lanjut sesuai kebutuhan bisnis.
 
 ## 📘 Dokumentasi Teknis
 
 Dokumentasi teknis backend, database (ERD), dan alur sistem dapat diakses di sini:
-👉 [Lihat DOCUMENTATION.md](./DOCUMENTATION.md)
+!!! [Lihat DOCUMENTATION.md](./DOCUMENTATION.md)
