@@ -31,7 +31,7 @@ import database mysql di local database anda dengan file db_crm.sql
 Clone repository berikut untuk melihat struktur folder dan source code:
 
 ```bash
-git clone https://github.com/nabilaolivia2104-commits/taks-crm
+git clone https://github.com/nabilaolivia2104-commits/taks-crm.git
 cd taks-crm
 ```
 
