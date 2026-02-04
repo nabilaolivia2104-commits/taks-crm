@@ -7,7 +7,7 @@ Client (Postman / Frontend) → Controller → Service → Database (MySQL)
 
 ## 2. Struktur Folder
 
-[Struktur Folder](./assets/struktur.png)
+<img src="/assets/struktur.png" alt/>
 
 ## 3. Database Schema
 
