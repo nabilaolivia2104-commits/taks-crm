@@ -11,13 +11,7 @@ Client (Postman / Frontend) → Controller → Service → Database (MySQL)
 
 ## 3. Database Schema
 
-- users
-- leads
-- deals
-- activities
-- deal_stages
-
-(Relasi dijelaskan di bawah)
+<img src="/assets/skema.png" alt/>
 
 ## 4. Flow CRM
 
